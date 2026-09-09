@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Alcira-Analyst Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/descarga.css" />
+        <link rel="stylesheet" href="assets/css/ficha.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+        <section class="project-card">
+        <!-- Cabecera del Proyecto -->
+        <header class="project-header">
+            <h2>&lt;Análisis Exploratorio de Datos (EDA)&gt;</h2>
+        </header>
+
+        <div class="project-content">
+            <!-- Columna Izquierda: Información Técnica -->
+            <div class="project-info">
+                <h3><b>Objetivo del Proyecto</b></h3>
+                <p>Realizar un Análisis Exploratorio de Datos (EDA) sobre el dataset público de despidos globales (World Layoffs), luego de la limpieza de datosd del proceso anterior. A través de consultas avanzadas en SQL, se identifican patrones, tendencias temporales, industrias impactadas y comportamientos clave según la etapa de financiamiento y ubicación geográfica de las empresas entre los años 2020 y 2023.</p>
+                <h3>Tecnología y Herramientas</h3>
+                <ul class="tech-list">
+                    <li><strong>Motor de Base de Datos:</strong> MySQL Server.</li>
+                    <li><strong>Lenguaje:</strong> SQL<br/>
+                     <strong>DML (Data Manipulation Language):</strong> Consultas avanzadas para extracción, filtrado, agrupación y cálculo de métricas acumuladas.<br/></li>
+                    <li><strong>Técnicas y Funciones de SQL Aplicadas:</strong> Expresiones Comunes de Tabla (CTEs), Funciones Ventana (DENSE_RANK(), SUM() OVER), Agregaciones complejas (GROUP BY, SUM, MAX, COUNT), Manipulación de fechas (YEAR, SUBSTRING) y Análisis de Series Temporales (totales acumulados / rolling totals).</li>
+                    <li><strong>kaggle:</strong> <a href="https://www.kaggle.com/datasets/swaptr/layoffs-2022" target="_blank"> World Layoffs Dataset.</a></li>
+                </ul>
+                <h3>Resultado:</h3>
+            </div>
+
+            <!-- Columna Derecha: Visualización y Dashboard -->
+                <div class="project-visual">
+                    <div class="dashboard-preview">
+                        <!-- captura del dashboard -->
+                        <img src="images/Gemini_Generated_Image_EDA.jpg" alt="Dashboard Preview" />
+                    </div>
+                    <div class="download-container">
+                        <!-- Botón de Descarga Directa -->
+                        <a href="javascript:void(0);" 
+                        onclick="downloadFile('https://raw.githubusercontent.com/Chiruca/SQL-EDA/main/Portfolio%20Project-Layoff-EDA.sql', 'Portfolio_Project_Layoff_EDA.sql')" 
+                        class="btn-download">
+                            <svg class="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                            </svg>
+                            Descargar Archivo .sql
+                        </a>
+                        <span class="download-tip">Open in MySQL Server to review Script</span>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Pie de la tarjeta: Conclusiones de Negocio -->
+        <footer class="project-footer">
+            <div class="insight-item">
+            <p><strong>Identificación de Patrones y Tendencias:</strong> Análisis de concentraciones de despidos por ubicación geográfica (liderada por SF Bay Area), industria y etapas de financiamiento de las compañías.<br/>
+            <strong>Evaluación de Impacto por Etapa Empresarial:</strong> Hallazgo clave sobre el colapso total (100% de despidos) en startups avanzadas (Serie B/C) debido al agotamiento de capital (burn rate), ejemplificado en casos como BritishVolt y Quibi.</p>
+            </div>
+            <div class="insight-item">
+            <p><strong>Clasificación Temporal y Rankings:</strong> Modelado de rankings anuales (Top 3 empresas con más despidos por año) mediante DENSE_RANK() y cálculo del total acumulado mensual (rolling total) para evaluar la evolución histórica de la crisis.</p>
+            </div>
+        </footer>
+        </section>
+        <script>
+        function downloadFile(url, fileName) {
+            fetch(url)
+                .then(response => response.blob())
+                .then(blob => {
+                    const blobUrl = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = blobUrl;
+                    a.download = fileName;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(blobUrl);
+                })
+                .catch(() => alert('No se pudo iniciar la descarga.'));
+        }
+        </script>
+    </body>

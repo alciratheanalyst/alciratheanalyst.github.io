@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Alcira-Analyst Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/descarga.css" />
+        <link rel="stylesheet" href="assets/css/ficha.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+        <section class="project-card">
+        <!-- Cabecera del Proyecto -->
+        <header class="project-header">
+            <h2>&lt;Limpieza de Datos en SQL&gt;</h2>
+        </header>
+
+        <div class="project-content">
+            <!-- Columna Izquierda: Información Técnica -->
+            <div class="project-info">
+                <h3><b>Descripción del Proyecto</b></h3>
+                <p>El objetivo principal de este proyecto es realizar un proceso exhaustivo de limpieza y estandarización de datos (Data Cleaning) sobre un conjunto de datos públicos relativo a despidos masivos globales (World Layoffs, alojado originalmente en Kaggle).</p>
+                <h3>Tecnología y Herramientas</h3>
+                <ul class="tech-list">
+                    <li><strong>Motor de Base de Datos:</strong> MySQL Server.</li>
+                    <li><strong>Lenguaje:</strong> SQL<br/>
+                     <strong>DDL: Data Definition Language.</strong> Definición, modificación o eliminación de la estructura de los objetos dentro de la base de datos<br/>
+                     <strong>DML: Data Manipulation Language.</strong> Para trabajar con los registros dentro de las tablas sin alterar las estructuras.</li>
+                    <li><strong>Técnicas y Funciones de SQL Aplicadas:</strong> Creación de Entornos Staging, Funciones Ventana (Window Functions), Manipulación-Limpieza de Texto y Estandarización de Tipos de Datos.</li>
+                    <li><strong>kaggle:</strong> <a href="https://www.kaggle.com/datasets/swaptr/layoffs-2022" target="_blank">Layoffs 2022 Dataset</a></li>
+                </ul>
+                <h3>Resultado:</h3>
+            </div>
+
+            <!-- Columna Derecha: Visualización y Dashboard -->
+                <div class="project-visual">
+                    <div class="dashboard-preview">
+                        <!-- captura del dashboard -->
+                        <img src="images/Gemini_Generated_Image.jpg" alt="Dashboard Preview" />
+                    </div>
+                    <div class="download-container">
+                        <!-- Botón de Descarga Directa -->
+                        <a href="javascript:void(0);" 
+                            onclick="downloadFile('https://raw.githubusercontent.com/Chiruca/SQL-data-cleaning/main/Portfolio%20Project%20-%20Data%20Cleaning.sql', 'Portfolio_Project_Data_Cleaning.sql')" 
+                            class="btn-download">
+                                <svg class="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                                </svg>
+                                Descargar Archivo .sql
+                        </a>
+                        <span class="download-tip">Open in MySQL Server to review Script</span>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Pie de la tarjeta: Conclusiones de Negocio -->
+        <footer class="project-footer">
+            <div class="insight-item">
+            <p><strong>Integridad:</strong> Depuración del dataset mediante entornos auxiliares (staging) y funciones de ventana, eliminando duplicados sin alterar los datos originales.<br/>
+            <strong>Estandarización:</strong> Homogeneización de categorías de industria y nombres de país, asegurando que los agrupamientos futuros arrojen resultados precisos.</p>
+            </div>
+            <div class="insight-item">
+            <p><strong>Calidad para Análisis Posterior (EDA):</strong> Se corrigieron los formatos de fecha y se eliminaron registros sin información clave de despidos. Esto dejó el dataset completamente limpio y listo para el análisis de negocio o su integración en herramientas de BI como Power BI y Tableau.</p>
+            </div>
+        </footer>
+        </section>
+        <script>
+        function downloadFile(url, fileName) {
+            fetch(url)
+                .then(response => response.blob())
+                .then(blob => {
+                    const blobUrl = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = blobUrl;
+                    a.download = fileName;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(blobUrl);
+                })
+                .catch(() => alert('No se pudo iniciar la descarga.'));
+        }
+        </script>
+    </body>

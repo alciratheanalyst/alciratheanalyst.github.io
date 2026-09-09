@@ -1,0 +1,50 @@
+
+.download-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espacio entre el icono y el texto */
+  background-color: #24292e; /* Color estilo GitHub */
+  color: #ffffff;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 280px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-download:hover {
+  background-color: #2f363d;
+  transform: translateY(-1px);
+}
+
+.btn-download:active {
+  transform: translateY(1px);
+}
+
+/* Estilo del icono SVG */
+.icon-download {
+  width: 18px;
+  height: 18px;
+}
+
+/* Pequeño texto aclaratorio inferior */
+.download-tip {
+  font-size: 0.8rem;
+  color: #666666;
+  font-style: italic;
+  text-align: center;
+}

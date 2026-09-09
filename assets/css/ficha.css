@@ -1,0 +1,132 @@
+
+/* Contenedor principal del proyecto */
+.project-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 1200px;
+  margin: 20px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333333;
+}
+
+/* Título superior al estilo código */
+.project-header h2 {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+
+/* Distribución en dos columnas usando CSS Grid */
+.project-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* La columna derecha es un poco más ancha para el gráfico */
+  gap: 30px;
+  margin-bottom: 5px;
+}
+
+/* Estilos de los textos y listas de la izquierda */
+.project-info h3 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-top: 5px;
+  margin-bottom: 1px;
+}
+
+.project-info p {
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-top: 1px;
+  margin-bottom: 10px;
+}
+
+.tech-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 1px;
+  margin-bottom: 5px;
+}
+
+.tech-list li {
+  margin-bottom: 5px;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* Contenedor de la visualización y botón */
+.project-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-preview {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.dashboard-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Botón interactivo */
+.btn-dashboard {
+  background-color: #111111;
+  color: #ffffff;
+  padding: 10px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-dashboard:hover {
+  background-color: #333333;
+}
+
+/* Conclusiones inferiores */
+.project-footer {
+  display: flex;
+  gap: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 5px;
+}
+
+.insight-item {
+  flex: 1;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-left: 4px solid #2c3e50;
+  border-radius: 0 4px 4px 0;
+}
+
+.insight-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* --- DISEÑO RESPONSIVO (MEDIA QUERIES) --- */
+/* Cuando la pantalla sea menor a 768px (móviles y tablets verticales) */
+@media (max-width: 768px) {
+  .project-content {
+    grid-template-columns: 1fr; /* Pasa a una sola columna */
+    gap: 20px;
+  }
+  
+  .project-footer {
+    flex-direction: column; /* Las conclusiones se apilan verticalmente */
+    gap: 15px;
+  }
+}
